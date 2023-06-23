@@ -1,0 +1,23 @@
+<div class="container-fluid text-center">
+    <h1 class="text-center text-warning"> - LIST USER - </h1>
+    <button class="btn btn-primary text-center" routerLink="/adduser"> ADD NEW USER </button>
+    <table class="table mt-5">
+        <tr>
+            <th>ID USER </th>
+            <th>NAME</th>
+            <th> LAST NAME </th>
+            <th> EMAIL</th>
+            <th> PASSWORD </th>
+            <th> ROLE </th>
+         
+        </tr>
+        <tr *ngFor="let user of users ; index as i">
+            <td> {{user.id}} </td>
+            <td>{{user.name}} </td>
+            <td>{{user.lastname}} </td>
+            <td> {{user.email}} </td>
+            <td>{{user.password}}  </td>
+            <td> {{user.role}} </td>
+        </tr>
+    </table>
+</div>

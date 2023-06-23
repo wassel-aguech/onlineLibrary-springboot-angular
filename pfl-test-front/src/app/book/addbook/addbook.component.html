@@ -1,0 +1,44 @@
+<div class="container mt-3 ">
+    <form *ngIf="bookform" [formGroup]="bookform" class="p-3 " (submit)="onsubmit()">
+        <h1 class="TITRE mb-3 text-warning text-center">ADD BOOK</h1>
+        <div class="row">
+            <div class="col">
+                <div class="form-group">
+                    <input type="text" autofocus formControlName="title" class="form-control mb-3 text-center"
+                        placeholder="BOOK TITLE"
+                        [ngClass]="{'is-invalid':submitted && bookform.get('title')?.errors ,'is-valid':submitted && !bookform.get('title')?.errors}">
+                </div>
+            </div>
+            <div class="col">
+                <div class="form-group">
+                    <input type="text" formControlName="author" class="form-control mb-3 text-center"
+                        placeholder="AUTHOR BOOK"
+                        [ngClass]="{'is-invalid':submitted && bookform.get('author')?.errors ,'is-valid':submitted && !bookform.get('author')?.errors}">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <div class="form-group">
+                    <input type="text" formControlName="description" class="form-control mb-3 text-center"
+                        placeholder="DESCRIPTION"
+                        [ngClass]="{'is-invalid':submitted && bookform.get('description')?.errors ,'is-valid':submitted && !bookform.get('description')?.errors}">
+                </div>
+            </div>
+            <div class="col">
+                <div class="form-group">
+                    <input type="file" formControlName="file " class="form-control mb-3 text-center"
+                        placeholder="file source"
+                        [ngClass]="{'is-invalid':submitted && bookform.get('file')?.errors ,'is-valid':submitted && !bookform.get('file')?.errors}">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <select class="form-select" style="width: 400px; margin: auto;">
+                <option *ngFor="let category of categories" [value]="category.id"> {{category.id}} </option>
+            </select>
+        </div>
+
+        <button class="btn btn-warning mt-3 w-100" type="submit"> ADD </button>
+    </form>
+</div>

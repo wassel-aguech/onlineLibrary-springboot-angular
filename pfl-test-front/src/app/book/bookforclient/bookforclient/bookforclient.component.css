@@ -1,0 +1,19 @@
+.col-4{
+    border: 1px solid blue;
+    padding: 10px;
+    transition: 0.1s;
+    height: 400px;
+    width: 300px;
+    margin: auto;
+    transition: 0.5s;
+}
+.col-4:hover{
+    background-color:whitesmoke !important;
+    transform: scale(1.1);
+    border: 3px solid white;
+    cursor: pointer;
+    border-radius: 5px;
+    color: black;
+}
+
+

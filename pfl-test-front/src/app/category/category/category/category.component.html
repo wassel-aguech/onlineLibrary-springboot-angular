@@ -1,0 +1,18 @@
+<div class="container-fluid text-center">
+    <h1 class="text-center text-warning"> - LIST CATEGORY - </h1>
+    <button class="btn btn-primary text-center" routerLink="/addcategory"> ADD NEW CATEGORY </button>
+    <table class="table mt-5">
+        <tr>
+            <th>ID CATEGORY </th>
+            <th>NAME CATEGORY</th>
+         
+        </tr>
+        <tr *ngFor="let category of categories ; index as i">
+            <td> {{category.id}} </td>
+            <td>{{category.name}} </td>
+
+                <button class="btn btn-danger"> <img src="./assets/icon/update.png" width="30px"> </button>
+                <button class="btn btn-danger ms-1"> <img src="./assets/icon/delete.png" width="30px"> </button>
+        </tr>
+    </table>
+</div>

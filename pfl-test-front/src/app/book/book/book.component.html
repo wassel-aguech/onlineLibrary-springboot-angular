@@ -1,0 +1,19 @@
+<div class="container-fluid text-center">
+    <h1 class="text-center text-warning"> - LIST BOOK - </h1>
+    <button class="btn btn-primary text-center" routerLink="/addbook"> ADD NEW BOOK </button>
+    <table class="table mt-5">
+        <tr>
+            <th>ID BOOK </th>
+            <th>NAME</th>
+            <th> AUTHOR </th>
+            <th> DESCRIPTION</th>
+         
+        </tr>
+        <tr *ngFor="let book of books ; index as i">
+            <td> {{book.id}} </td>
+            <td>{{book.title}} </td>
+            <td>{{book.Author}} </td>
+            <td> {{book.Description}} </td>
+        </tr>
+    </table>
+</div>

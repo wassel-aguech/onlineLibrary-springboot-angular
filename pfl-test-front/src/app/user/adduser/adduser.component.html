@@ -1,0 +1,46 @@
+<div class="container mt-3 ">
+    <form *ngIf="userform" [formGroup]="userform" class="p-3 " (submit)="onsubmit()">
+        <h1 class="TITRE mb-3 text-warning text-center">ADD USER</h1>
+        <div class="row">
+            <div class="col">
+                <div class="form-group">
+                    <input type="text" autofocus formControlName="name" class="form-control mb-3 text-center"
+                        placeholder="USER NAME"
+                        [ngClass]="{'is-invalid':submitted && userform.get('name')?.errors ,'is-valid':submitted && !userform.get('name')?.errors}">
+                </div>
+            </div>
+            <div class="col">
+                <div class="form-group">
+                    <input type="text" formControlName="lastname" class="form-control mb-3 text-center"
+                        placeholder="LAST NAME"
+                        [ngClass]="{'is-invalid':submitted && userform.get('lastname')?.errors ,'is-valid':submitted && !userform.get('lastname')?.errors}">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <div class="form-group">
+                    <input type="email" formControlName="email" class="form-control mb-3 text-center"
+                        placeholder="EMAIL"
+                        [ngClass]="{'is-invalid':submitted && userform.get('email')?.errors ,'is-valid':submitted && !userform.get('email')?.errors}">
+                </div>
+            </div>
+            <div class="col">
+                <div class="form-group">
+                    <input type="password" formControlName="password " class="form-control mb-3 text-center"
+                        placeholder="PASSWORD"
+                        [ngClass]="{'is-invalid':submitted && userform.get('password')?.errors ,'is-valid':submitted && !userform.get('password')?.errors}">
+                </div>
+            </div>
+            <div class="col">
+                <select class="form-select">
+                    <option selected> SELECT TYPE USER </option>
+                    <option value=""> NORMAL</option>
+                    <option value=""> ABONNE</option>
+                </select>
+            </div>
+        </div>
+
+        <button class="btn btn-warning mt-3 w-100" type="submit"> ADD </button>
+    </form>
+</div>

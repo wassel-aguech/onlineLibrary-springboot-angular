@@ -1,0 +1,75 @@
+
+
+span {
+    color: red;
+    font-weight: bold;
+  }
+  
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 120px;
+  }
+  
+  ul li {
+    display: inline-block;
+    padding: 20px;
+    font-weight: bold;
+  }
+  ul li a {
+    text-decoration: none;
+    color: whitesmoke;
+  }
+  h1 {
+    margin-right: 100px;
+    font-size: 30px;
+    font-weight: bold;
+  }
+  button {
+    margin-left: 100px;
+  }
+  
+  .titre {
+    font-size: 60px;
+  }
+  .span1 {
+    color: #6ec1e4;
+    font-weight: bold;
+  }
+
+
+  
+ nav ul li a {
+  position: relative;
+  padding: 1rem 0 0.5rem;
+  color: white;
+  text-decoration: none;
+  text-transform: uppercase;
+  
+  &::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%) scaleX(0);
+    transform-origin: 50% 50%;
+    width: 100%;
+    height: 1px;
+    background-color: gold;
+    transition: transform 250ms;
+  }
+  
+  &:hover {
+    
+    &::after {
+      transform: translateX(-50%) scaleX(1);
+    }
+    
+  }}
+
+
+
+  
+  
