@@ -2,8 +2,8 @@ export interface Book {
 
       id : number,
      title :  String ,
-      Author : string,
-      Description : string ,
+      author : string,
+      description : string ,
       file : string,
 
 }

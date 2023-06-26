@@ -16,7 +16,7 @@ export class CategoryComponent {
   constructor(private router : Router ,private  categoryservice  : CategoryService){}
 
   ngOnInit(){
-
+    this.getallcategory();
   }
   getallcategory() {
     this.categoryservice.getAllCategory().subscribe((response: any) => {

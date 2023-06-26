@@ -16,9 +16,9 @@ export class UserService {
 
   
   public getAllUser():Observable<User[]>{
-    return this.http.get<User[]>(`${this.apiServerUrl}/User/getalluser`)
+    return this.http.get<User[]>(`${this.apiServerUrl}/User/all`)
   }
   
   public addUser(user:User):Observable<User>{
-    return this.http.post<User>(`${this.apiServerUrl}/Book/adduser` , user)
+    return this.http.post<User>(`${this.apiServerUrl}/User/add` , user)
   }}

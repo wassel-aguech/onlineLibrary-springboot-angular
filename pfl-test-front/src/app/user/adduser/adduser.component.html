@@ -1,5 +1,5 @@
 <div class="container mt-3 ">
-    <form *ngIf="userform" [formGroup]="userform" class="p-3 " (submit)="onsubmit()">
+    <form *ngIf="userform" [formGroup]="userform" class="p-3 "  (submit)="onsubmit()">
         <h1 class="TITRE mb-3 text-warning text-center">ADD USER</h1>
         <div class="row">
             <div class="col">
@@ -27,7 +27,7 @@
             </div>
             <div class="col">
                 <div class="form-group">
-                    <input type="password" formControlName="password " class="form-control mb-3 text-center"
+                    <input type="password" formControlName="password" class="form-control mb-3 text-center"
                         placeholder="PASSWORD"
                         [ngClass]="{'is-invalid':submitted && userform.get('password')?.errors ,'is-valid':submitted && !userform.get('password')?.errors}">
                 </div>

@@ -15,11 +15,11 @@ export class CategoryService {
 
 
   public getAllCategory():Observable<Category[]>{
-    return this.http.get<Category[]>(`${this.apiServerUrl}/Categry/getallcategory`)
+    return this.http.get<Category[]>(`${this.apiServerUrl}/Category/all`)
   }
   
   public addCategory(category:Category):Observable<Category>{
-    return this.http.post<Category>(`${this.apiServerUrl}/Categry/addcategory` , category)
+    return this.http.post<Category>(`${this.apiServerUrl}/Category/add` , category)
   }
 
 

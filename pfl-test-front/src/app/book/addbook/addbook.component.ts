@@ -28,14 +28,16 @@ export class AddbookComponent {
       file: new FormControl('', Validators.required),
 
     })
+   this.getallcategory()
+
   }
 
 
   onsubmit(){
     this.submitted = true
-    if(this.bookform?.invalid){
-      return
-     }
+    //if(this.bookform?.invalid){
+      //return
+     //}
     this.bookservice.addBook(this.bookform?.value)
       .subscribe(
         Response =>alert('book added successfuly'),

@@ -5,14 +5,15 @@
         <tr>
             <th>ID CATEGORY </th>
             <th>NAME CATEGORY</th>
+            <th> ACTION </th>
          
         </tr>
         <tr *ngFor="let category of categories ; index as i">
             <td> {{category.id}} </td>
             <td>{{category.name}} </td>
 
-                <button class="btn btn-danger"> <img src="./assets/icon/update.png" width="30px"> </button>
-                <button class="btn btn-danger ms-1"> <img src="./assets/icon/delete.png" width="30px"> </button>
+                <button class="btn "> <img src="./assets/icon/update.png" width="30px"> </button>
+                <button class="btn ms-1"> <img src="./assets/icon/delete.png" width="30px"> </button>
         </tr>
     </table>
 </div>

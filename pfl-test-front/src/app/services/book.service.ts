@@ -15,11 +15,11 @@ export class BookService {
 
   
   public getAllBook():Observable<Book[]>{
-    return this.http.get<Book[]>(`${this.apiServerUrl}/Book/getallbook`)
+    return this.http.get<Book[]>(`${this.apiServerUrl}/Book/all`)
   }
   
   public addBook(book:Book):Observable<Book>{
-    return this.http.post<Book>(`${this.apiServerUrl}/Book/addbook` , book)
+    return this.http.post<Book>(`${this.apiServerUrl}/Book/add` , book)
   }
 
 }
