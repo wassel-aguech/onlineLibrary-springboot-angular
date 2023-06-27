@@ -22,4 +22,9 @@ export class BookService {
     return this.http.post<Book>(`${this.apiServerUrl}/Book/add` , book)
   }
 
+  public deleteBook(bookId: number):Observable<void>{
+    return this.http.delete<void>(`${this.apiServerUrl}/Book/delete/${bookId}`)
+  }
+
+
 }

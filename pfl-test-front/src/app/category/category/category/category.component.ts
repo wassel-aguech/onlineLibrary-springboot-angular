@@ -25,4 +25,18 @@ export class CategoryComponent {
     }, (error) => {
       console.log(error);
     })}
+
+    delete(id: any) {
+      this.categoryservice.deleteCategory(id).subscribe((response: any) => {
+        alert('delete succsess')
+        this.getallcategory();
+      }, (error) => {
+        console.log(error);
+  
+      })
+    }
+
+    gotoupdate(id : any){
+      this.router.navigate(['/category', id])
+    }
 }

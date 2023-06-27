@@ -13,8 +13,6 @@ books? : Book[]
 
 
   constructor( private bookservice : BookService){}
-
-
   ngOnInit(){
 this.getallbook();
   }
@@ -25,4 +23,14 @@ this.getallbook();
     }, (error) => {
       console.log(error);
     })}
+    delete(id: any) {
+      this.bookservice.deleteBook(id).subscribe((response: any) => {
+        alert('delete succsess')
+        this.getallbook();
+      }, (error) => {
+        console.log(error);
+  
+      })
+    }
+
 }

@@ -7,6 +7,7 @@
             <th>NAME</th>
             <th> AUTHOR </th>
             <th> DESCRIPTION</th>
+            <th> ACTION</th>
          
         </tr>
         <tr *ngFor="let book of books ; index as i">
@@ -14,6 +15,10 @@
             <td>{{book.title}} </td>
             <td>{{book.author}} </td>
             <td> {{book.description}} </td>
+            <td>
+                <button class="btn ms-1" (click)="delete(book.id)"> <img src="./assets/icon/delete.png" width="30px"> </button>
+
+            </td>
         </tr>
     </table>
 </div>

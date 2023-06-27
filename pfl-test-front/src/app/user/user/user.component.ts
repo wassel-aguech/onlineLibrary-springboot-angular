@@ -17,13 +17,25 @@ export class UserComponent {
 
 
   ngOnInit(){
-this.getallbook();
+this.getalluser();
   }
-  getallbook() {
+  getalluser() {
     this.userservice.getAllUser().subscribe((response: any) => {
       console.log(response);
       this.users = response
     }, (error) => {
       console.log(error);
     })}
+
+
+    delete(id: any) {
+      this.userservice.deleteUser(id).subscribe((response: any) => {
+        alert('delete succsess')
+        this.getalluser();
+      }, (error) => {
+        console.log(error);
+  
+      })
+    }
+
 }

@@ -12,8 +12,8 @@
             <td> {{category.id}} </td>
             <td>{{category.name}} </td>
 
-                <button class="btn "> <img src="./assets/icon/update.png" width="30px"> </button>
-                <button class="btn ms-1"> <img src="./assets/icon/delete.png" width="30px"> </button>
+                <button class="btn " (click)="gotoupdate(category.id)"> <img src="./assets/icon/update.png" width="30px"> </button>
+                <button class="btn ms-1" (click)="delete(category.id)"> <img src="./assets/icon/delete.png" width="30px"> </button>
         </tr>
     </table>
 </div>

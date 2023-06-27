@@ -1,5 +1,4 @@
-package com.example.cours.back.response;
-
+package com.example.cours.back.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -10,8 +9,8 @@ import lombok.NoArgsConstructor;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class AuthentificationResponse {
-
-    private String token;
+public class AuthenticationRequest {
+    private String email;
+    private String password;
 
 }

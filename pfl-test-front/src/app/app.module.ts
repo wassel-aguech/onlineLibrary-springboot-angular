@@ -17,6 +17,7 @@ import { BookComponent } from './book/book/book.component';
 import { AdduserComponent } from './user/adduser/adduser.component';
 import { UserComponent } from './user/user/user.component';
 import { BookforclientComponent } from './book/bookforclient/bookforclient/bookforclient.component';
+import { UpdatecategoryComponent } from './category/updatecategory/updatecategory/updatecategory.component';
 
 
 @NgModule({
@@ -32,7 +33,8 @@ import { BookforclientComponent } from './book/bookforclient/bookforclient/bookf
     BookComponent,
     AdduserComponent,
     UserComponent,
-    BookforclientComponent
+    BookforclientComponent,
+    UpdatecategoryComponent
   ],
   imports: [
     BrowserModule,

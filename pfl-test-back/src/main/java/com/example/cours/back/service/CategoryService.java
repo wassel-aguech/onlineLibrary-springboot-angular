@@ -14,22 +14,23 @@ public class CategoryService {
 
     @Autowired
     private CategoryRepo categoryRepo;
+    @Autowired
+    private BookRepo bookRepo;
 
 
-
-    public List <Category> getallCategories (){
+    public List <Category> getallCategory (){
         return categoryRepo.findAll();
     }
     public Category findCategoryById(Long id){
         return categoryRepo.findById(id).orElseThrow();
     }
 
-    public Category addCategory (Category cours){
-        return categoryRepo.save(cours);
+    public Category addCategory (Category category){
+        return categoryRepo.save(category);
     }
 
-    public Category updatCategory (Long id , Category cours){
-        return categoryRepo.save(cours);
+    public Category updateCategory (Long id , Category category){
+        return categoryRepo.save(category);
     }
 
     public void  deleteCategory(Long id){
@@ -37,6 +38,16 @@ public class CategoryService {
     }
 
 
+
+    public void affectBooktoCategory(Long BookId, Long CategoryId) {
+
+        Category category = categoryRepo.findById(BookId).get();
+        Book book = bookRepo.findById(CategoryId).get();
+        book.setCategory(category);
+
+        categoryRepo.save(category);
+
+    }
 
 
 

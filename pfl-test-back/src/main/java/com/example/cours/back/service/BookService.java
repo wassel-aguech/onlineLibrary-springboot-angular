@@ -40,9 +40,9 @@ public class BookService {
         if(bookRepo.findById(id).isPresent()){
             bookRepo.deleteById(id);
 
-    System.out.println( " le book de id " +id + "  est suprime ");
+    System.out.println( " la lesson de id " +id + "  est suprime ");
         }  else {
-        throw new EntityNotFoundException("La book avec l'ID " + id + " n'existe pas.");
+        throw new EntityNotFoundException("La lasson avec l'ID " + id + " n'existe pas.");
     }
     }
 

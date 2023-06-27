@@ -6,6 +6,10 @@
     width: 300px;
     margin: auto;
     transition: 0.5s;
+
+    display: flex;
+    flex-direction: column;
+    padding: 50px;
 }
 .col-4:hover{
     background-color:whitesmoke !important;

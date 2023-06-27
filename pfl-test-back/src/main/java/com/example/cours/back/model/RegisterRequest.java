@@ -1,8 +1,6 @@
 package com.example.cours.back.model;
 
-
-import lombok.Builder;
-import lombok.Data;
+import lombok.*;
 
 @Data
 @Builder

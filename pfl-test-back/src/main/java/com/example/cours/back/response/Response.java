@@ -1,14 +1,13 @@
 package com.example.cours.back.response;
 
-public class FileResponse {
-
+public class Response {
 
     private String fileName;
     private String fileDownloadUri;
     private String fileType;
     private long size;
 
-    public FileResponse(String fileName, String fileDownloadUri, String fileType, long size) {
+    public Response(String fileName, String fileDownloadUri, String fileType, long size) {
         this.fileName = fileName;
         this.fileDownloadUri = fileDownloadUri;
         this.fileType = fileType;
@@ -47,7 +46,5 @@ public class FileResponse {
         this.size = size;
     }
 }
-
-
 
 

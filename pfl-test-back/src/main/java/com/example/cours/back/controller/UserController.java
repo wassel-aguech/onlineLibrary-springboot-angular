@@ -3,59 +3,47 @@ package com.example.cours.back.controller;
 
 import com.example.cours.back.model.Role;
 import com.example.cours.back.model.User;
-import com.example.cours.back.repository.UserRepo;
 import com.example.cours.back.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
-
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@EnableAutoConfiguration
 @RestController
 @CrossOrigin(origins = "*")
 @RequestMapping("/User")
 public class UserController {
 
-
     @Autowired
     private UserService userService;
 
-    @Autowired
-   private UserRepo userRepo;
-
     @PostMapping("/add")
-    public User addNewUClient(@RequestBody User user){
-       return  userService.addUser(user, Role.NORMAL);
+    public User addUser(@RequestBody User user){
+       return userService.addUser(user);
     }
 
-    @PostMapping("/addSubscriberUser")
-    public User addNewSubscriberUser(@RequestBody User user) {
-        return userService.addUser(user, Role.NORMAL);
+    @DeleteMapping("/delete/{id}")
+    public  void deleteuser(@PathVariable("id") Long id){
+        userService.deleteUser(id);
     }
+
 
     @GetMapping("/findByEmail")
     public User findByEmail(@RequestParam("email") String email){
-     return  userService.findByEmail(email);
+        return userService.findByEmail(email);
     }
     @GetMapping("/all")
     public List<User> getAllUsers() {
         return userService.getAllUsers();
     }
 
+    @PutMapping("/{userId}/editRole")
+    public ResponseEntity<User> editUserRole(@PathVariable Long userId, @RequestParam Role newRole) {
+            User updatedUser = userService.editUserRole(userId, newRole);
+            return new ResponseEntity<>(updatedUser, HttpStatus.OK);
 
-    @PutMapping("/{id}/decreaseDownloadsRemaining")
-    public void decreaseDownloadsRemaining(@PathVariable Integer id) {
-        User user = userRepo.findById(Long.valueOf(id)).orElseThrow(() -> new IllegalArgumentException("User not found"));
-        int downloadsRemaining = user.getDownloadsRemaining();
-        if (downloadsRemaining > 0) {
-            user.setDownloadsRemaining(downloadsRemaining - 1);
-            userRepo.save(user);
-        } else {
-            throw new IllegalStateException("No downloads remaining for the user");
-        }
     }
-
 
 }

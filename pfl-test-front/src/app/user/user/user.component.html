@@ -9,6 +9,7 @@
             <th> EMAIL</th>
             <th> PASSWORD </th>
             <th> ROLE </th>
+            <th> ACTION</th>
          
         </tr>
         <tr *ngFor="let user of users ; index as i">
@@ -18,6 +19,11 @@
             <td> {{user.email}} </td>
             <td>{{user.password}}  </td>
             <td> {{user.role}} </td>
+            <td>
+                <button class="btn "> <img src="./assets/icon/update.png" width="30px"> </button>
+                <button class="btn ms-1" (click)="delete(user.id)"> <img src="./assets/icon/delete.png" width="30px"> </button>
+        
+            </td>
         </tr>
     </table>
 </div>

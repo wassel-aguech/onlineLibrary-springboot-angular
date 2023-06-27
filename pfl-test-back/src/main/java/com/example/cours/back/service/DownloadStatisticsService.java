@@ -8,7 +8,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-public class DownloadStatistiqueService {
+public class DownloadStatisticsService {
+
 
     @Autowired
     private DownloadStatisticsRepo downloadStatisticsRepo;
@@ -16,8 +17,7 @@ public class DownloadStatistiqueService {
     public void addDownloadStatistic(Book book, User user) {
         DownloadStatistics downloadStatistics = new DownloadStatistics();
         downloadStatistics.setBook(book);
-        //  downloadStatistics.setUser(user);
-
+        downloadStatistics.setUser(user);
         downloadStatistics.setNumberOfDownloads(1);
         downloadStatisticsRepo.save(downloadStatistics);
     }

@@ -17,6 +17,7 @@ public class Category {
     private long id;
     private String name;
 
+
     @OneToMany(cascade = CascadeType.ALL,fetch = FetchType.EAGER,mappedBy = "category")
     private List<Book> books;
 

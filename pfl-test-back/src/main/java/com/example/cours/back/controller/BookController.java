@@ -17,6 +17,10 @@ public class BookController {
     @Autowired
     private BookService bookService;
 
+
+    @Autowired
+    private CategoryService categoryService;
+
     @GetMapping("/all")
     public List<Book> getall (){
 

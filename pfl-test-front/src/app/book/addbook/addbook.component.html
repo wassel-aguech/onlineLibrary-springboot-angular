@@ -35,7 +35,8 @@
         </div>
         <div class="row">
             <select class="form-select" style="width: 400px; margin: auto;">
-                <option *ngFor="let category of categories" [value]="category.id"> {{category.id}} </option>
+                <option selected> BOOK CATEGORY</option>
+                <option *ngFor="let category of categories" [value]="category.id"> {{category.name}} </option>
             </select>
         </div>
 

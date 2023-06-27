@@ -1,0 +1,16 @@
+<div class="container mt-3 ">
+    <form *ngIf="categoryform" [formGroup]="categoryform" class="p-3 ">
+        <h1 class="TITRE mb-3 text-warning text-center">UPDATE CATEGORY</h1>
+        <div class="row">
+            <div class="col">
+                <div class="form-group">
+                    <input type="text" autofocus formControlName="name" class="form-control mb-3 text-center"
+                        placeholder="CATEGORY NAME"
+                        [ngClass]="{'is-invalid':submitted && categoryform.get('name')?.errors ,'is-valid':submitted && !categoryform.get('name')?.errors}">
+                </div>
+            </div>
+        </div>
+        <button class="btn btn-warning mt-3 w-100" type="submit" (click)="update()"> UPDATE </button>
+    </form>
+</div>
+

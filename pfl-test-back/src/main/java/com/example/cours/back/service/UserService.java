@@ -1,6 +1,5 @@
 package com.example.cours.back.service;
 
-import com.example.cours.back.model.Book;
 import com.example.cours.back.model.Role;
 import com.example.cours.back.model.User;
 import com.example.cours.back.repository.UserRepo;
@@ -16,9 +15,12 @@ public class UserService {
     @Autowired
     private UserRepo userRepo;
 
-
-    public User addUser(User user, Role role) {
+    public User addUser(User user) {
         return userRepo.save(user);
+    }
+
+    public void  deleteUser(Long id){
+        userRepo.deleteById(id);
     }
 
 
@@ -30,8 +32,15 @@ public class UserService {
         return userRepo.findAll();
     }
 
-
+    public User editUserRole(Long userId, Role newRole) {
+        Optional<User> optionalUser = userRepo.findById(userId);
+        if (optionalUser.isPresent()) {
+            User user = optionalUser.get();
+            user.setRole(newRole);
+            return userRepo.save(user);
+        } else {
+            throw new RuntimeException("User not found with ID: " + userId);
+        }
+    }
 }
-
-
 

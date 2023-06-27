@@ -1,6 +1,5 @@
 package com.example.cours.back.repository;
 
-import com.example.cours.back.model.Category;
 import com.example.cours.back.model.DownloadStatistics;
 import org.springframework.data.jpa.repository.JpaRepository;
 

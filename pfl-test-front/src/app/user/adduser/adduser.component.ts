@@ -35,6 +35,7 @@ submitted = false
       .subscribe(
         Response =>alert('user added successfuly'),
         error => console.log('error!!', error),
+
       )
       this.router.navigate(['/user']);
   }

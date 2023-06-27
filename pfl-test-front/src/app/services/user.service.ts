@@ -21,4 +21,9 @@ export class UserService {
   
   public addUser(user:User):Observable<User>{
     return this.http.post<User>(`${this.apiServerUrl}/User/add` , user)
-  }}
+  }
+  public deleteUser(userId: number):Observable<void>{
+    return this.http.delete<void>(`${this.apiServerUrl}/User/delete/${userId}`)
+  }
+
+}

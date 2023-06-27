@@ -9,6 +9,7 @@ import { BookComponent } from './book/book/book.component';
 import { UserComponent } from './user/user/user.component';
 import { AdduserComponent } from './user/adduser/adduser.component';
 import { BookforclientComponent } from './book/bookforclient/bookforclient/bookforclient.component';
+import { UpdatecategoryComponent } from './category/updatecategory/updatecategory/updatecategory.component';
 
 const routes: Routes = [
 
@@ -20,7 +21,8 @@ const routes: Routes = [
   {path : "book" , component : BookComponent},
   {path : "user" , component : UserComponent},
   {path : "adduser" , component : AdduserComponent},
-  {path : "bookforclient" , component : BookforclientComponent}
+  {path : "bookforclient" , component : BookforclientComponent},
+  {path : "category/:id" , component : UpdatecategoryComponent}
 ];
 
 @NgModule({

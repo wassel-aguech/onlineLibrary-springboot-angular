@@ -7,10 +7,10 @@ import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 @SpringBootApplication
-public class pfltestback {
+public class fpltest {
 
 	public static void main(String[] args) {
-		SpringApplication.run(pfltestback.class, args);
+		SpringApplication.run(fpltest.class, args);
 	}
 	@Bean
 	public WebMvcConfigurer corsConfigurer()
